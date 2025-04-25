@@ -1,6 +1,5 @@
 import { AuthDescription } from "@/components/auth/auth-description";
 import { WhoAreYou } from "@/components/auth/who-are-you";
-import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 const HomePage = () => {
@@ -13,12 +12,6 @@ const HomePage = () => {
           description="We are Happy To see you here!"
         />
         <WhoAreYou />
-        <Link
-          href="/register"
-          className="bg-primary text-white py-2.5 px-8 rounded-[10px] font-bold cursor-pointer hover:bg-primary/90"
-        >
-          Next
-        </Link>
       </div>
       <div className="min-w-168 min-h-screen bg-[url('/auth/sky-bg.png')] bg-cover flex items-center justify-center">
         <Image
