@@ -20,7 +20,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body className={`max-w-[1920px] mx-auto ${Font.className}`}>
+      <body className={`max-w-[1440px] mx-auto ${Font.className}`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
