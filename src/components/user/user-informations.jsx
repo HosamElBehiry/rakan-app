@@ -24,7 +24,7 @@ export const UserInformations = () => {
           </div>
         </div>
         <button className="size-12.5 cursor-pointer bg-light-dark-1 rounded-full grid place-items-center">
-          <SettingsIcon className="size-6" />
+          <SettingsIcon className="size-6 text-white" />
         </button>
       </div>
       <p className="text-sm max-w-130 text-white/70 ms-2">

@@ -26,7 +26,7 @@ export const MarketPlaceCard = ({ img }) => {
         <div className="flex items-center gap-4">
           <div className="flex flex-1 items-center gap-3">
             <div className="flex items-center gap-1">
-              <GroupIcon className="size-4" />
+              <GroupIcon className="size-4 text-primary" />
               <span className="text-xs text-white">12</span>
             </div>
             <div className="flex items-center gap-1">

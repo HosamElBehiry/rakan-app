@@ -23,7 +23,7 @@ export const RegisterForm = ({ type }) => {
             Full Name
           </label>
           <div className="flex items-center gap-3 bg-dark p-3 rounded-[10px]">
-            <UserIcon className="size-4" />
+            <UserIcon className="size-4 text-primary" />
             <Field
               className="flex-1 placeholder:text-white/70 outline-none caret-white text-white/70 text-sm"
               placeholder="Enter your Full Name"

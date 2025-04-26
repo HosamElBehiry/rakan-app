@@ -31,7 +31,7 @@ export const ServiceCard = ({ img }) => {
               <span className="text-xs text-white">Public</span>
             </div>
             <div className="flex items-center gap-1">
-              <GroupIcon className="size-4" />
+              <GroupIcon className="size-4 text-primary" />
               <span className="text-xs text-white">12</span>
             </div>
             <div className="flex items-center gap-1">
