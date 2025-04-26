@@ -15,7 +15,7 @@ const UserLayout = ({ children }) => {
           alt="Top Bg Img!"
         />
       </div>
-      <div className="container mx-auto flex gap-20 mt-40">
+      <div className="container mx-auto flex gap-20 mt-40 pb-40">
         <UserSideBar />
         <div className="flex-1 mt-6">
           <div className="flex flex-col gap-10">
