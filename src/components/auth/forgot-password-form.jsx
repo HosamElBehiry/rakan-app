@@ -25,7 +25,7 @@ export const ForgotPasswordForm = () => {
             Email Address
           </label>
           <div className="flex items-center gap-3 bg-dark p-3 rounded-[10px]">
-            <EmailIcon className="size-4" />
+            <EmailIcon className="size-4 text-primary" />
             <Field
               className="flex-1 placeholder:text-white/70 outline-none caret-white text-white/70 text-sm"
               placeholder="Enter your email"

@@ -30,7 +30,7 @@ export const MarketPlaceCard = ({ img }) => {
               <span className="text-xs text-white">12</span>
             </div>
             <div className="flex items-center gap-1">
-              <WalletIcon className="size-4" />
+              <WalletIcon className="size-4 text-primary" />
               <span className="text-xs text-white font-bold">24 SAR</span>
               <span className="text-[10px] text-white line-through">
                 30 SAR

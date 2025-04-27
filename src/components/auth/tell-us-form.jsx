@@ -34,7 +34,7 @@ export const TellUsForm = () => {
           Tell freelancers about your business or goals.
         </label>
         <div className="flex gap-3 bg-dark p-2.5 rounded-[10px] min-h-28">
-          <EmailIcon className="mt-1" />
+          <EmailIcon className="mt-1 text-primary" />
           <textarea
             name=""
             id="description"

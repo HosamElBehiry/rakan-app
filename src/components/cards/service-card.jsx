@@ -35,7 +35,7 @@ export const ServiceCard = ({ img }) => {
               <span className="text-xs text-white">12</span>
             </div>
             <div className="flex items-center gap-1">
-              <WalletIcon className="size-4" />
+              <WalletIcon className="size-4 text-primary" />
               <span className="text-xs text-white font-bold">24 SAR</span>
             </div>
           </div>

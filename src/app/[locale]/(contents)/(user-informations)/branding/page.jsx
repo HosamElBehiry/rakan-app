@@ -11,7 +11,7 @@ import { ErrorMessage, Field, Formik, Form } from "formik";
 import { ProfileImg } from "@/components/profile/profile-img";
 import { useState } from "react";
 
-const UserProfilePage = () => {
+const BrandingPage = () => {
   const [start, setStart] = useState(12);
   return (
     <Formik
@@ -139,4 +139,4 @@ const UserProfilePage = () => {
   );
 };
 
-export default UserProfilePage;
+export default BrandingPage;

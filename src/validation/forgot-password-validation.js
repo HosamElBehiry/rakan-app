@@ -1,4 +1,4 @@
-import { boolean, object, ref, string } from "yup";
+import { object, ref, string } from "yup";
 
 export const forgotPasswordInitialValues = {
   email: "",
