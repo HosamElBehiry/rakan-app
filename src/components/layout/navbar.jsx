@@ -4,7 +4,7 @@ export const Navbar = () => {
   return (
     <ul className="flex items-center gap-7">
       <li className="size-10 cursor-pointer rounded-xl flex items-center justify-center text-white bg-primary">
-        <AddCircleIcon className="size-5" />
+        <AddCircleIcon className="size-5 text-white" />
       </li>
       <li className="text-white text-sm hover:underline cursor-pointer">
         Projects

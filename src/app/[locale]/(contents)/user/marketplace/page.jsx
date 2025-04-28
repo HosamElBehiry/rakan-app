@@ -8,7 +8,7 @@ const MarketPlacePage = () => {
       <MarketCard title="Design Templates (2)" data={[4, 5, 6]} />
       <MarketCard title="Design Templates (3)" data={[7, 8, 9, 10, 11]} />
       <button className="mt-4 mx-auto py-2.5 hover:bg-primary transition-colors duration-300 cursor-pointer border border-white rounded-full w-60 text-white flex items-center justify-center gap-2.5">
-        <AddCircleIcon className="size-5" />
+        <AddCircleIcon className="size-5 text-white" />
         <span className="font-normal">Add New Templates</span>
       </button>
     </section>

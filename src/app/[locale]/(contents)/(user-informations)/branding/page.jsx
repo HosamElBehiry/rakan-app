@@ -1,141 +1,111 @@
 "use client";
 
-import {
-  generalInformationsInitialValues,
-  generalInformationsValidation,
-  interestsOptions,
-} from "@/validation/user-profile-validation";
-import { UserIcon } from "@/components/icons/user-icon";
-import { EmailIcon } from "@/components/icons/email-icon";
-import { ErrorMessage, Field, Formik, Form } from "formik";
-import { ProfileImg } from "@/components/profile/profile-img";
+import { ActionIcon } from "@/components/icons/action-icon";
+import { AddCircleIcon } from "@/components/icons/add-circle-icon";
+import { ArrowIcon } from "@/components/icons/arrow-icon";
+import { GroupIcon } from "@/components/icons/group-icon";
+import { UserNewBrandForm } from "@/components/profile/user-new-brand-form";
+import Image from "next/image";
 import { useState } from "react";
 
 const BrandingPage = () => {
-  const [start, setStart] = useState(12);
+  const [active, setActive] = useState(0);
   return (
-    <Formik
-      initialValues={generalInformationsInitialValues}
-      validationSchema={generalInformationsValidation}
-      onSubmit={(e) => console.log({ e })}
-    >
-      {({ setFieldValue, values }) => (
-        <Form className="flex-1 bg-light-dark-2 py-11 px-23 rounded-3xl flex flex-col gap-12">
-          <ProfileImg setFieldValue={setFieldValue} />
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col gap-1.5">
-              <div className="flex flex-col gap-2 w-full">
-                <label htmlFor="" className="text-white text-sm font-normal">
-                  Full Name
-                </label>
-                <div className="flex items-center gap-3 bg-dark p-3 rounded-[10px]">
-                  <UserIcon className="size-4 text-primary" />
-                  <Field
-                    className="flex-1 placeholder:text-white/70 outline-none caret-white text-white/70 text-sm"
-                    placeholder="Ex: Hisham Mousa"
-                    name="fullname"
-                  />
-                </div>
-                <ErrorMessage
-                  name="fullname"
-                  component="p"
-                  className="text-sm text-red-600 font-semibold"
-                />
+    <section className="flex-1 bg-light-dark-1 py-9 px-6.5 rounded-3xl flex flex-col gap-16">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <GroupIcon className="text-white size-4" />
+          <h4 className="font-bold text-white">Branding and Teams</h4>
+        </div>
+        <div className="flex items-center gap-2">
+          {["My Brand", "My Marketers"].map((info, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`py-2 px-4 text-xs cursor-pointer hover:bg-primary ${
+                active === i
+                  ? "bg-primary font-bold"
+                  : "bg-light-dark-2 border-light-dark-2 border"
+              } text-white rounded-md`}
+            >
+              {info}
+            </button>
+          ))}
+        </div>
+      </div>
+      {!active ? (
+        <UserNewBrandForm />
+      ) : (
+        <div className="flex flex-col gap-8">
+          <div className="flex items-center gap-2 text-primary">
+            <GroupIcon className="size-4" />
+            <h4 className="text-sm font-bold">My Marketers</h4>
+          </div>
+          <table>
+            <thead>
+              <tr className="text-sm">
+                <th className="pb-3 text-primary">ID</th>
+                <th className="pb-3 text-white">Marketer Profile</th>
+                <th className="pb-3 text-white">Total Sales</th>
+                <th className="pb-3 text-white">Commission</th>
+                <th className="pb-3 text-white">Net Profit(SAR)</th>
+                <th className="pb-3 text-white">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[1, 2, 3, 4, 5].map((info) => (
+                <tr className="text-sm" key={info}>
+                  <td className="py-3 text-center text-primary">{info}</td>
+                  <td className="py-3 text-center text-white">
+                    <span className="flex items-center justify-center gap-2">
+                      <Image
+                        height={20}
+                        width={20}
+                        alt="User"
+                        className="size-5 rounded-full object-cover"
+                        src="/dummy/user.jpg"
+                      />
+                      <span className="text-center text-white">
+                        Hisham Mousa
+                      </span>
+                    </span>
+                  </td>
+                  <td className="py-3 text-center text-white">2</td>
+                  <td className="py-3 text-center text-white">10%</td>
+                  <td className="py-3 text-center text-white">152 SAR</td>
+                  <td className="py-3 text-center text-white">
+                    <button className="cursor-pointer">
+                      <ActionIcon />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="flex items-center justify-between">
+            <div className="w-60 border border-primary flex items-center">
+              <button className="size-12 cursor-pointer border-e border-e-primary text-xs text-white flex items-center gap-3 justify-center">
+                1 <ArrowIcon className="size-2 rotate-90" />
+              </button>
+              <div className="flex-1 text-white flex items-center justify-center text-xs">
+                {" "}
+                1 of 5 pages
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="" className="text-white text-sm font-normal">
-                Job Title
-              </label>
-              <div className="flex items-center gap-3 bg-dark p-3 rounded-[10px]">
-                <UserIcon className="size-4 text-primary" />
-                <Field
-                  className="flex-1 placeholder:text-white/70 outline-none caret-white text-white/70 text-sm"
-                  placeholder="Ex : UI/UX Designer"
-                  name="job"
-                />
-              </div>
-              <ErrorMessage
-                name="job"
-                component="p"
-                className="text-sm text-red-600 font-semibold"
-              />
-            </div>
-            <div className="flex flex-col gap-2 col-span-full">
-              <label htmlFor="" className="text-white text-sm font-normal">
-                Job Description
-              </label>
-              <div className="flex gap-3 bg-dark p-2.5 rounded-[10px] min-h-56">
-                <EmailIcon className="mt-1 text-primary" />
-                <Field
-                  name="description"
-                  as="textarea"
-                  id="description"
-                  placeholder="Enter Your Description here"
-                  className="flex-1 resize-none placeholder:text-white/70 outline-none caret-white text-white/70 text-sm"
-                />
-              </div>
-              <ErrorMessage
-                name="description"
-                component="p"
-                className="text-sm text-red-600 font-semibold"
-              />
-            </div>
-            <div className="flex flex-col gap-3.5 col-span-full">
-              <label className="text-sm font-bold text-white">
-                Interested Fields
-              </label>
-              <div className="grid grid-cols-4 gap-6">
-                {interestsOptions.slice(0, start).map((option) => (
-                  <div key={option.value} className="flex items-center gap-2">
-                    <Field
-                      type="checkbox"
-                      name="fields"
-                      className="appearance-none border min-w-3.5 max-w-3.5 min-h-3.5 max-h-3.5 flex-1 border-primary rounded-sm checked:bg-primary cursor-pointer"
-                      id={option.value}
-                      value={option.value}
-                      checked={values.fields.includes(option.value)}
-                    />
-                    <label
-                      htmlFor={option.value}
-                      className="text-xs text-white cursor-pointer"
-                    >
-                      {option.label}
-                    </label>
-                  </div>
-                ))}
-                <button
-                  type="button"
-                  onClick={() =>
-                    setStart(
-                      start === interestsOptions.length
-                        ? 12
-                        : interestsOptions.length
-                    )
-                  }
-                  className="text-xs col-span-full cursor-pointer w-fit hover:underline text-primary font-bold"
-                >
-                  Show {start === interestsOptions.length ? "Less.." : "More.."}
-                </button>
-              </div>
-              <ErrorMessage
-                name="fields"
-                component="p"
-                className="text-sm text-red-600 font-semibold"
-              />
-            </div>
-            <div className="col-span-full mt-3.5 flex items-center justify-center">
-              <button
-                type="submit"
-                className="bg-primary text-white py-2.5 px-10 rounded-full font-bold cursor-pointer hover:bg-primary/90"
-              >
-                Save Changes
+              <button className="size-12 cursor-pointer border-x border-x-primary text-white flex items-center gap-3 justify-center">
+                <ArrowIcon className="size-2 -rotate-90" />
+              </button>
+              <button className="size-12 cursor-pointer text-white flex items-center gap-3 justify-center">
+                <ArrowIcon className="size-2 rotate-90" />
               </button>
             </div>
+            <button className="flex items-center gap-2 text-primary">
+              <AddCircleIcon />
+              <span className="font-bold">Add New Marketer</span>
+            </button>
           </div>
-        </Form>
+        </div>
       )}
-    </Formik>
+    </section>
   );
 };
 
